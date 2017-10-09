@@ -1,0 +1,48 @@
+<div layout="column" layout-align="begin center" class="content" ng-cloak>
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Add new snippet" ng-click="addSnippet()"
+               ng-disabled="user != null && user.blocked">
+        <md-tooltip md-direction="top">New snippet</md-tooltip>
+        <md-icon md-svg-src="img/icons/add.svg"></md-icon>
+    </md-button>
+    <md-content>
+        <md-list class="md-dense" flex>
+            <md-list-item>
+                <md-card style="height:auto!important;">
+                    <form layout="column">
+                        <md-input-container class="filter" flex class="md-block">
+                            <input ng-model="filterDto.description" type="text" placeholder="Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+                        </md-input-container>
+                        <md-input-container class="filter" flex>
+                            <md-select placeholder="Language" ng-model="filterDto.language" md-selected-text="{{language.name}}">
+                                <md-option ng-value="language" ng-repeat="language in languagesList">
+                                    {{language.name}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <div layout="row">
+                            <div flex="50" >
+                                <md-datepicker ng-model="filterDto.startDate" md-placeholder="Enter start date"></md-datepicker>
+                            </div>
+                            <div flex="50" >
+                                <md-datepicker ng-model="filterDto.endDate" md-placeholder="Enter end date"></md-datepicker>
+                            </div>
+
+                        </div>
+                        <md-button ng-disabled="filterDto == null" flex class="md-raised md-accent" type="submit" ng-click="search()">Search
+                        </md-button>
+                    </form>
+                </md-card>
+            </md-list-item>
+            <md-list-item ng-repeat="snippet in snippetsList">
+                <md-card layout="row" layout-align="center center" ng-click="openSnippet(snippet)">
+                    <div class="long-text-div" flex="70">
+                        <b>{{snippet.description}}</b>
+                    </div>
+                    <div flex="30">
+                        <h6>{{snippet.language.name}}</h6>
+                    </div>
+                </md-card>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

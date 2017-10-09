@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <title>SnippetStore</title>
+
+</head>
+<body ng-app="app" ng-cloak>
+
+<div layout="row">
+    <div ui-view="sidenavbar" flex="25"></div>
+    <div ui-view="content" flex="75"></div>
+</div>
+
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" href="style.css"/>
+
+<!-- ALERTIFY -->
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/alertifyjs/1.6.1/alertify.min.js"></script>
+<script>
+    alertify.set('notifier', 'position', 'top-right');
+</script>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=placeholder">
+</script>
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.6.1/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.6.1/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.6.1/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.6.1/css/themes/bootstrap.min.css"/>
+
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script>
+
+<!-- AngularUI -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+<!-- APP -->
+
+<script src="app.js"></script>
+
+<!-- AUTHENTICATION -->
+<script src="authentication/signin/signinController.js"></script>
+<script src="authentication/signup/signupController.js"></script>
+<script src="authentication/authService.js"></script>
+<script src="authentication/authState.js"></script>
+
+<!-- LANGUAGES -->
+<script src="languages/languageController.js"></script>
+<script src="languages/languageService.js"></script>
+<script src="languages/languageState.js"></script>
+
+<!-- SIDE NAVBAR -->
+<script src="sidenavbar/sideNavbarController.js"></script>
+
+<!-- SNIPPETS -->
+<script src="snippets/snippet/snippetController.js"></script>
+<script src="snippets/snippets/snippetsController.js"></script>
+<script src="snippets/snippetService.js"></script>
+<script src="snippets/snippetState.js"></script>
+<script src="snippets/snippets/addSnippet/addSnippetController.js"></script>
+
+<!-- USERS -->
+<script src="users/user/userDialogController.js"></script>
+<script src="users/users/usersController.js"></script>
+<script src="users/userService.js"></script>
+<script src="users/userState.js"></script>
+
+<script src="storageService.js"></script>
+</body>
+</html>

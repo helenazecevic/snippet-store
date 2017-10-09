@@ -1,0 +1,28 @@
+<div layout="column" layout-align="begin center" class="content" ng-cloak>
+    <md-content>
+        <md-list class="md-dense" flex>
+            <md-list-item>
+                <md-card>
+                    <form layout="row">
+                        <md-input-container flex="70" class="md-block">
+                            <input ng-model="username" type="text" placeholder="Username">
+                        </md-input-container>
+                        <md-button flex="30" class="md-raised md-accent" type="submit" ng-click="search()">Search
+                        </md-button>
+                    </form>
+                </md-card>
+            </md-list-item>
+            <md-list-item ng-repeat="user in usersList">
+                <md-card layout="row" ng-click="openUser(user)">
+                    <div flex="15">
+                        <img ng-src="{{user.picture || '/img/user-placeholder.jpg'}}" class="md-avatar"
+                             alt="Not available"/>
+                    </div>
+                    <div flex="70">
+                        <h3>{{user.username}}</h3>
+                    </div>
+                </md-card>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

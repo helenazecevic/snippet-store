@@ -1,0 +1,45 @@
+<md-dialog aria-label="Add snippet">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="img/icons/close.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content" layout="column">
+            <form name="addSnippetForm">
+                <md-input-container class="md-block">
+                    <input ng-model="snippet.description" type="text" placeholder="Description" autofocus required>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <input ng-model="snippet.url" type="text" placeholder="URL">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <textarea name="code" ng-model="snippet.code" md-maxlength="2000" maxlength="2000"
+                              placeholder="Code" required></textarea>
+                </md-input-container>
+                <div layout="row">
+                    <md-input-container flex="60">
+                        <label>Language</label>
+                        <md-select ng-model="snippet.language" md-selected-text="{{language.name}}" required>
+                            <md-option ng-value="language" ng-selected="isDefault(language)"
+                                       ng-repeat="language in languagesList">{{language.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="40">
+                        <input ng-model="snippet.timeRemaining" type="number" min="0" placeholder="Time remaining">
+                    </md-input-container>
+                </div>
+            </form>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <md-button ng-disabled="addSnippetForm.$invalid" ng-click="addSnippet()">
+            Add
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

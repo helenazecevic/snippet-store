@@ -1,0 +1,3 @@
+INSERT INTO `address` (`id`, `addressString`, `longitude`, `latitude`) VALUES (1, 'Novi Sad', 44.5, 4.45);
+INSERT INTO `programminglanguage` (`id`, `name`) VALUES (1, 'undefined');
+INSERT INTO `user` (`id`, `role`, `username`, `password`, `name`, `lastName`, `phoneNumber`, `email`, `picture`, `blocked`, `address_id`) VALUES (1, 'ADMIN', 'admin', 'admin', 'Helena', 'Lea', '063123456', 'helena@lea.com', '/img/user-placeholder.jpg', false, 1);

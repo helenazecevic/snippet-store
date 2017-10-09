@@ -1,0 +1,17 @@
+<div layout="column" layout-align="center center" class="content" ng-cloak>
+    <md-button class="md-fab md-fab-bottom-right" ng-click="addLanguage()" aria-label="Add new language">
+        <md-tooltip md-direction="top">New language</md-tooltip>
+        <md-icon md-svg-src="img/icons/add.svg"></md-icon>
+    </md-button>
+    <md-content>
+        <md-list class="md-dense">
+            <md-list-item ng-repeat="language in languagesList">
+                <md-card layout="column" layout-align="center center">
+                    <div>
+                        <h4>{{language.name}}</h4>
+                    </div>
+                </md-card>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>

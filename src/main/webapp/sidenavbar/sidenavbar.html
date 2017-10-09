@@ -1,0 +1,27 @@
+<div layout="row" class="sidenav" ng-cloak>
+    <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')"
+            md-whiteframe="4">
+        <md-toolbar>
+            <h4>Snippet Store</h4>
+        </md-toolbar>
+        <md-list layout="column" flex>
+            <div flex></div>
+            <md-button ui-sref-active="active" class="nav-option" ui-sref="snippets">Snippets</md-button>
+            <md-button ui-sref-active="active" class="nav-option" ui-sref="users">Users</md-button>
+            <md-button ui-sref-active="active" class="nav-option" ng-if="user != null" ng-click="openUser()">Profile</md-button>
+            <md-button ui-sref-active="active" class="nav-option" ng-if="user != null && user.role == 'ADMIN'"
+                       ui-sref="languages">Languages
+            </md-button>
+            <div flex></div>
+            <md-button ui-sref-active="active" class="nav-option" ng-if="user == null" ui-sref="signin">Sign in
+            </md-button>
+            <md-button ui-sref-active="active" class="nav-option" ng-if="user == null" ui-sref="signup">Sign up
+            </md-button>
+            <md-button ui-sref-active="active" class="nav-option" ng-if="user != null" ng-click="signout()">Sign out
+            </md-button>
+        </md-list>
+    </md-sidenav>
+</div>

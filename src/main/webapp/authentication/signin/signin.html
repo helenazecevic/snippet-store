@@ -1,0 +1,16 @@
+<div layout="column" layout-align="center center" class="content" ng-cloak>
+    <md-content>
+        <form name="signinForm" class="auth-form">
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
+                <input ng-model="user.username" type="text" placeholder="Username" required autofocus>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>-->
+                <input ng-model="user.password" type="password" placeholder="Password" required>
+            </md-input-container>
+            <md-button class="md-raised md-accent" type="submit" ng-disabled="signinForm.$invalid" ng-click="signin()">Sign in</md-button>
+        </form>
+    </md-content>
+</div>

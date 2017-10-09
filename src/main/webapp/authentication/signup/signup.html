@@ -1,0 +1,40 @@
+<div layout="column" layout-align="center center" class="content" ng-cloak>
+    <md-content>
+        <form name="signupForm" class="auth-form">
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
+                <input ng-model="user.username" type="text" placeholder="Username" required md-maxlength="25"
+                       maxlength="25" autofocus>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>-->
+                <input ng-model="user.password" type="password" placeholder="Password" required>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
+                <input ng-model="user.email" type="text" placeholder="Email" required>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
+                <input ng-model="user.name" type="text" placeholder="First Name" required>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
+                <input ng-model="user.lastName" type="text" placeholder="Last Name" required>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
+                <input ng-model="user.phoneNumber" type="text" placeholder="Phone Number" required>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <!--<md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>-->
+                <input ng-model="user.address.addressString" type="text" placeholder="Address" required>
+            </md-input-container>
+
+            <md-button class="md-raised md-accent" type="submit" ng-disabled="signupForm.$invalid" ng-click="signup()">
+                Sign up
+            </md-button>
+        </form>
+    </md-content>
+</div>

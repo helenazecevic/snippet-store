@@ -1,0 +1,74 @@
+<md-dialog aria-label="User">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button"
+                       ng-if="currentUser != null && currentUser.role == 'ADMIN' && currentUser.id != user.id && user.role != 'ADMIN'"
+                       ng-click="blockUser()">
+                <md-icon md-svg-src="{{user.blocked?'img/icons/unlocked_white.svg':'img/icons/locked_white.svg'}}"
+                         aria-label="Block user"></md-icon>
+            </md-button>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="img/icons/close.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content" layout="column">
+            <div class="md-dialog-content" layout="row">
+                <div layout="column" class="user-info" flex="25">
+                    <p>
+                        <label>Username</label>
+                    </p>
+                    <p>
+                        <label>First Name</label>
+                    </p>
+                    <p>
+                        <label>Last Name</label>
+                    </p>
+                    <p>
+                        <label>Email</label>
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                    </p>
+                    <p>
+                        <label>Address</label>
+                    </p>
+                </div>
+                <div layout="column" flex="45">
+                    <p>
+                        {{user.username}}
+                    </p>
+                    <p>
+                        {{user.name}}
+                    </p>
+                    <p>
+                        {{user.lastName}}
+                    </p>
+                    <p>
+                        {{user.email}}
+                    </p>
+                    <p>
+                        {{user.phoneNumber}}
+                    </p>
+                    <p>
+                        {{user.address.addressString}}
+                    </p>
+                </div>
+                <div class="user-photo" layout="column" layout-align="begin center" flex="30">
+                    <img ng-src="{{user.picture || '/img/user-placeholder.jpg'}}"
+                         alt="Not available">
+                    <div>
+                        <input class="ng-hide" id="input-file-id" type="file"
+                               onchange="angular.element(this).scope().uploadPhoto(this.files)"/>
+                        <label ng-if="currentUser != null && user.id == currentUser.id" for="input-file-id"
+                               class="md-button md-raised md-accent">Choose photo</label>
+                    </div>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+    </md-dialog-content>
+</md-dialog>
